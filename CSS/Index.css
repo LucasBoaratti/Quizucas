@@ -1,0 +1,73 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Pixelify", sans-serif;
+}
+
+@font-face {
+    font-family: "Pixelify";
+    src: url("../Assets/Fonts/PixelifySans-Regular.ttf") format("truetype");
+}
+
+/* Deixando o botão piscante */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.conteudoPrincipal {
+    background-image: url("../Assets/Background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.elementosTopo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1.25rem;
+}
+
+.inicio {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.iniciar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+
+.botaoIniciar {
+    width: 43.125rem;
+    height: 6.25rem;
+    font-size: 2.5rem;
+    border: none;
+    box-shadow: 20px 20px 20px 0 rgb(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.botaoIniciar:active {
+    transform: scale(0.98);
+}
+
+.textoPiscante {
+    animation: blink 1.5s infinite;
+}
+
+.elementosBase {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 25rem;
+    margin-top: 1.875rem;
+}
