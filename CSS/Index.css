@@ -12,12 +12,33 @@
 
 /* Deixando o botão piscante */
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+    0%, 100% { 
+        opacity: 1; 
+    }
+
+    50% { 
+        opacity: 0.3; 
+    }
+}
+
+/* Nuvens subindo/descendo */
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-50px);
+    }
+}
+
+/* Estilização de elementos */
+.nuvensFlutuantes {
+    animation: flutuar 2s ease-in-out infinite;
 }
 
 .conteudoPrincipal {
-    background-image: url("../Assets/Background.png");
+    background-image: url("./Assets/Background.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
