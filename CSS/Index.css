@@ -28,7 +28,18 @@
     }
 
     50% {
-        transform: translateY(-50px);
+        transform: translateY(-15px);
+    }
+}
+
+/* Coração pulsante */
+@keyframes piscar {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
     }
 }
 
@@ -38,7 +49,7 @@
 }
 
 .conteudoPrincipal {
-    background-image: url("./Assets/Background.png");
+    background-image: url("../Assets/Background.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -66,6 +77,9 @@
     gap: 2.5rem;
 }
 
+.estrela {
+    animation: piscar 2s ease-in-out infinite;
+}
 
 .botaoIniciar {
     width: 43.125rem;
@@ -91,4 +105,8 @@
     align-items: center;
     gap: 25rem;
     margin-top: 1.875rem;
+}
+
+.coracaoPiscante {
+    animation: piscar 1.5s infinite;
 }
