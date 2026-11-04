@@ -1,3 +1,4 @@
+/* Reset de estilização */
 * {
     padding: 0;
     margin: 0;
@@ -5,6 +6,7 @@
     font-family: "Pixelify", sans-serif;
 }
 
+/* Fonte padrão */
 @font-face {
     font-family: "Pixelify";
     src: url("../Assets/Fonts/PixelifySans-Regular.ttf") format("truetype");
@@ -32,7 +34,7 @@
     }
 }
 
-/* Coração pulsante */
+/* Coração/estrela pulsante */
 @keyframes piscar {
     0%, 100% {
         transform: scale(1);
