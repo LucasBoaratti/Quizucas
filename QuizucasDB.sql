@@ -34,3 +34,12 @@ CREATE TABLE Alternativas (
     
     FOREIGN KEY (ID_Pergunta) REFERENCES Perguntas(ID_Pergunta)
 );
+
+-- Inserindo as categorias na tabela Categorias
+
+INSERT INTO Categorias (Nome, Imagem) VALUES
+("Jogos", "Frontend/Assets/ImagensCategorias/CategoriaJogos.png"),
+("PHP", "Frontend/Assets/ImagensCategorias/CategoriaPHP.png"),
+("Matemática", "Frontend/Assets/ImagensCategorias/CategoriaMatematica.png"),
+
+SELECT * FROM Categorias;

@@ -47,4 +47,44 @@
     text-align: center;
     color: #fff;
     font-weight: normal;
+    margin-bottom: 3.125rem;
+}
+
+/* Estilizando a seção de categorias */
+.categoriasGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    max-width: 62.5rem;
+    margin: 0 auto;
+}
+
+.card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 18.75rem;
+    height: 8.75rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 10px 10px 10px rgb(255, 255, 255, 0.5);
+    background-image: linear-gradient(45deg, #C020FB, #5DD73E);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nomeCategoria {
+    color: #fff;
+}
+
+.imagemCategoria {
+    width: 7.8125rem;
+    height: 5.625rem;
 }

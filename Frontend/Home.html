@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Quizucas - Home</title>
-        <link rel="stylesheet" href="../CSS/Home.css">
-        <link rel="shortcut icon" href="../Assets/Favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="./CSS/Home.css">
+        <link rel="shortcut icon" href="../Frontend/Assets/Favicon.ico" type="image/x-icon">
     </head>
     <body class="conteudoPrincipal">
         <main>
@@ -15,6 +15,18 @@
                 <img src="../Assets/Elements/Gato.png" alt="Gato">
             </section>
             <h1 class="tituloCategoria">Escolha sua categoria favorita e divirta-se!!!</h1>
+
+            <!-- Criando os cards para serem exibidos a partir do javascript -->
+            <section id="categorias" class="categoriasGrid">
+                <template id="cards">
+                    <div class="card">
+                        <h2 class="nomeCategoria"></h2>
+                        <img class="imagemCategoria">
+                    </div>
+                </template>
+            </section>
+
+            <script src="./JavaScript/Home.js"></script>
         </main>
     </body>
 </html>
