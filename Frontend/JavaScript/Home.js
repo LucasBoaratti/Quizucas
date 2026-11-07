@@ -1,7 +1,9 @@
 // Carregando as categorias para serem exibidas na página home
-fetch("/Quizucas/Backend/Queries/ListarCategorias.php")
-    .then(response => response.json())
-    .then(categorias => {
+async function getCategorias() {
+    try {
+        // Chama a URL/caminho da lista de categorias
+        const categorias = axios.get("/Quizucas/Backend/Queries/ListarCategorias.php");
+
         const container = document.getElementById("categorias"); // id do <section></section>
         const modelo = document.getElementById("cards"); // id do <template></template>
 
@@ -20,5 +22,8 @@ fetch("/Quizucas/Backend/Queries/ListarCategorias.php")
             // Adicionando o card ao container
             container.appendChild(card);
         });
-    })
-    .catch(error => console.error("Erro ao carregar as categorias: ", error));
+    }
+    catch (error) {
+        console.error("Erro ao carregar as categorias: ", error);
+    }
+}
