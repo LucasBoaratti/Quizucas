@@ -41,5 +41,11 @@ INSERT INTO Categorias (Nome, Imagem) VALUES
 ("Jogos", "Frontend/Assets/ImagensCategorias/CategoriaJogos.png"),
 ("PHP", "Frontend/Assets/ImagensCategorias/CategoriaPHP.png"),
 ("Matemática", "Frontend/Assets/ImagensCategorias/CategoriaMatematica.png"),
+("Geografia", "Frontend/Assets/ImagensCategorias/CategoriaGeografia.png"),
+("Minecraft", "Frontend/Assets/ImagensCategorias/CategoriaMinecraft.png"),
+("Python", "Frontend/Assets/ImagensCategorias/CategoriaPython.png"),
+("Cachorros", "Frontend/Assets/ImagensCategorias/CategoriaCachorros.png"),
+("Gatos", "Frontend/Assets/ImagensCategorias/CategoriaGatos.png"),
+("Linguagem C", "Frontend/Assets/ImagensCategorias/CategoriaC.png");
 
 SELECT * FROM Categorias;
