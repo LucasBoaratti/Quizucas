@@ -2,7 +2,8 @@
 async function getCategorias() {
     try {
         // Chama a URL/caminho da lista de categorias
-        const categorias = axios.get("/Quizucas/Backend/Queries/ListarCategorias.php");
+        const response = await axios.get("http://localhost/Quizucas/Backend/Queries/ListarCategorias.php");
+        const categorias = response.data;
 
         const container = document.getElementById("categorias"); // id do <section></section>
         const modelo = document.getElementById("cards"); // id do <template></template>
@@ -13,13 +14,18 @@ async function getCategorias() {
 
             const nome = card.querySelector(".nomeCategoria");
             const imagem = card.querySelector(".imagemCategoria");
+            const botaoQuiz = card.querySelector(".botaoQuiz");
             
             imagem.src = "../" + categoria.Imagem;
             imagem.alt = categoria.Nome;
 
             nome.textContent = categoria.Nome;
 
-            // Adicionando o card ao container
+            // Ao clicar no botão, leva para os quizes da categoria escolhida
+            botaoQuiz.addEventListener("click", () => {
+                window.location.href = `./Quiz.html?ID_Categoria=${categoria.ID_Categoria}`;
+            });
+
             container.appendChild(card);
         });
     }
@@ -27,3 +33,5 @@ async function getCategorias() {
         console.error("Erro ao carregar as categorias: ", error);
     }
 }
+
+getCategorias();

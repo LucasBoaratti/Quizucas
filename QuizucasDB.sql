@@ -42,10 +42,14 @@ INSERT INTO Categorias (Nome, Imagem) VALUES
 ("PHP", "Frontend/Assets/ImagensCategorias/CategoriaPHP.png"),
 ("Matemática", "Frontend/Assets/ImagensCategorias/CategoriaMatematica.png"),
 ("Geografia", "Frontend/Assets/ImagensCategorias/CategoriaGeografia.png"),
-("Minecraft", "Frontend/Assets/ImagensCategorias/CategoriaMinecraft.png"),
 ("Python", "Frontend/Assets/ImagensCategorias/CategoriaPython.png"),
 ("Cachorros", "Frontend/Assets/ImagensCategorias/CategoriaCachorros.png"),
 ("Gatos", "Frontend/Assets/ImagensCategorias/CategoriaGatos.png"),
-("Linguagem C", "Frontend/Assets/ImagensCategorias/CategoriaC.png");
+("Linguagem C", "Frontend/Assets/ImagensCategorias/CategoriaC.png"),
+("Pokemon", "Frontend/Assets/ImagensCategorias/CategoriaPokemon.png");
 
 SELECT * FROM Categorias;
+
+-- Inserindo os quizes de acordo com suas categorias
+INSERT INTO Quiz (ID_Categoria, Titulo, Descricao, Imagem) VALUES
+(1, "Minecraft", "Você conhece tudo sobre esse mundo quadrado? Então venha testar seus conhecimentos!", "Frontend/Assets/ImagensQuiz/QuizMinecraft.png");

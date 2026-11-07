@@ -19,15 +19,17 @@
             <!-- Criando os cards para serem exibidos a partir do javascript -->
             <section id="categorias" class="categoriasGrid">
                 <template id="cards">
-                    <div class="card">
-                        <h2 class="nomeCategoria"></h2>
-                        <img class="imagemCategoria">
-                    </div>
+                    <button class="botaoQuiz" style="background-color: transparent; border: none;">
+                        <div class="card">
+                            <h2 class="nomeCategoria"></h2>
+                            <img class="imagemCategoria">
+                        </div>
+                    </button>
                 </template>
             </section>
 
-            <script src="./JavaScript/Home.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/axios@<x.x.x>/dist/axios.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.20.0/axios.min.js"></script>
+            <script src="./JavaScript/Home.js" type="module"></script>
         </main>
     </body>
 </html>

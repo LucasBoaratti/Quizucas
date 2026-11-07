@@ -1,0 +1,74 @@
+// Função para recuperar o parâmetro enviado pela página home
+function recuperarURL() {
+    const parametros = new URLSearchParams(window.location.search);
+
+    return parametros.get("ID_Categoria");
+}
+
+// Buscando os quizes cadastrados no banco de dados
+async function getQuizes() {
+    // Recuperando o ID da categoria
+    const idCategoria = recuperarURL();
+
+    try {
+        // Requisição GET para os quizes, com o parâmetro sendo o ID da categoria
+        const response = await axios.get("http://localhost/Quizucas/Backend/Queries/ListarQuizes.php", {
+            params: {
+                ID_Categoria: idCategoria,
+            }
+        });
+
+        const quizes = response.data;
+
+        const container = document.getElementById("quizes");
+        const modelo = document.getElementById("cards");
+
+        // Verificando se existem quizes disponíveis para a categoria
+        if (quizes.length === 0) {
+            container.textContent = "Não há quizes disponíveis para essa categoria.";
+
+            // Estilizando a mensagem no container
+            container.style.textAlign = "center";
+            container.style.marginTop = "2.5rem";
+            container.style.color = "#fff";
+            container.style.fontWeight = "normal";
+            container.style.fontSize = "1.5625rem";
+
+            // Criando um link para voltar para a página home
+            const link = document.createElement("a");
+
+            link.href = "http://localhost/Quizucas/Frontend/Home.html";
+            link.textContent = "Voltar para página home";
+
+            // Adicionando propriedas do CSS no link
+            link.setAttribute("style", "display: flex; justify-content: center; margin-top: 1.5rem; font-size: 1.25rem; font-weight: normal; color: #fff;");
+
+            document.body.appendChild(link);
+
+            return;
+        }
+
+        quizes.forEach(quiz => {
+            const card = modelo.content.cloneNode(true);
+
+            const imagem = card.querySelector(".imagemQuiz");
+            const nome = card.querySelector(".nomeQuiz");
+            const descricao = card.querySelector(".descricaoQuiz");
+
+            // Colocando a URL da imagem no quiz
+            imagem.src = "../" + quiz.Imagem;
+            imagem.alt = quiz.Titulo;
+
+            nome.textContent = quiz.Titulo;
+
+            descricao.textContent = quiz.Descricao;
+
+            container.appendChild(card);
+        });
+    }
+    catch (error) {
+        console.log("Erro ao carregar quizes: ", error);
+    }
+}
+
+getQuizes();
