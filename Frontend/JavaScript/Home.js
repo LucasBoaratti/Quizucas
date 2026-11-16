@@ -4,7 +4,7 @@ async function getCategorias() {
         // Chama a URL/caminho da lista de categorias
 
         // Caso a porta for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/ListarCategorias.php
-        const response = await axios.get("http://localhost:8080/Quizucas/Backend/Queries/ListarCategorias.php");
+        const response = await axios.get("http://localhost/Quizucas/Backend/Queries/ListarCategorias.php");
         const categorias = response.data;
 
         const container = document.getElementById("categorias"); // id do <section></section>

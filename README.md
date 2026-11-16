@@ -1,6 +1,6 @@
 # Quizucas
 
-A Quizucas é um jogo onde possui diversos quizzes de diversas categorias para você jogar e se divertir com seus amigos. Esse projeto é um trabalho da disciplina de Desenvolvimento de Sistemas Web 1 do curso de ADS do IFSP Câmpus Hortolândia. O projeto não possui quizzes divididos por dificuldade, a dificuldade irá depender do conhecimento do jogador sobre aquele assunto.
+A **Quizucas** é um jogo onde possui diversos quizzes de diversas categorias para você jogar e se divertir com seus amigos. Esse projeto é um trabalho da disciplina de Desenvolvimento de Sistemas Web 1 do curso de ADS do IFSP Câmpus Hortolândia. O projeto não possui quizzes divididos por dificuldade, a dificuldade irá depender do conhecimento do jogador sobre aquele assunto.
 
 # Funcionalidades
 
@@ -27,25 +27,64 @@ A Quizucas é um jogo onde possui diversos quizzes de diversas categorias para v
 ```text
 Quizucas/
 ├── Backend/
-│   ├── Config/
+│   ├── Config/ # Configurações do banco de dados
 |   |   └── DatabaseConfig.php
-│   └── Queries/
+│   └── Queries/ # Queries/scripts sql de cada tabela
 |       ├── ListarCategorias.php
 |       └── ListarQuizes.php
 ├── Frontend/
 |   ├── Assets/
 |   |   ├── Elements/
+|   |   |   └── # Elementos decorativos (e alguns com efeitos)
 |   |   ├── Fonts/
+|   |   |   └── # Fonte personalizada padrão do projeto   
 |   |   ├── ImagensCategorias/
+|   |   |   └── # Imagens que representam cada categoria
 |   |   ├── ImagensQuiz/
+|   |   |   └── # Imagens que representam cada quiz (flyer)
 |   |   ├── Background.png
 |   |   ├── Favicon.ico
 |   |   └── Logomarca.png
-|   ├── CSS/
-|   ├── JavaScript
+|   ├── CSS/ # Arquivos de estilização
+|   |   ├── Home.css
+|   |   ├── Index.css
+|   |   └── Quiz.css
+|   ├── JavaScript/ # Arquivos de script
+|   |   ├── Home.js
+|   |   └── Quiz.js
 |   ├── Home.html
 |   ├── Index.html
 |   └── Quiz.html
 ├── QuizucasDB.sql
 └── README.md
 ```
+
+# Como rodar o projeto
+
+1. Baixe o xampp, pois ele será responsável por rodar o projeto: [Xampp](https://www.apachefriends.org/pt_br/index.html);
+
+2. Após instalar o xampp, baixe o código do projeto:
+
+```bash
+https://github.com/LucasBoaratti/Quizucas.git
+```
+
+3. Abra o Prompt de comando (ou PowerShell ou GitBash) na pasta htdocs. Ela provavelmente vai estar em: C:\xampp\htdocs;
+
+OBS: Certifique que o Git está instalado no seu computador. Caso não esteja, instale aqui: [Git](https://git-scm.com/downloads)
+
+```bash 
+git clone https://github.com/LucasBoaratti/Quizucas.git
+```
+
+4. Após colocar o projeto na pasta htdocs, abra o xampp e ative os servidores do **Apache** e do **MySQL**;
+
+5. Agora, digite **localhost** na URL do navegador, para abrir a pasta do projeto;
+
+6. Agora, encontre a pasta Quizucas, depois vá em Frontend e após isso, o projeto vai abrir. A URL será essa: http://localhost/Quizucas/Frontend/
+
+7. Abra outra guia e digite **localhost/phpmyadmin** para criar o banco de dados do projeto;
+
+8. Cole os scripts SQL presentes no arquivo **QuizucasDB.sql** para criar as tabelas e os dados.
+
+E pronto! Agora volte ao passo 6 e você poderá jogar os quizzes :D
