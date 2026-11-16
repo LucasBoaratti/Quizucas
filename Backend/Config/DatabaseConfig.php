@@ -2,7 +2,7 @@
     // Informações do banco de dados
     $hostname = "localhost";
     $username = "root";
-    $senha = "lucas"; // OBS: colocar senha do MySQL
+    $senha = ""; // OBS: colocar senha, se for usar o MySQL (caso tenha configurado uma)
     $dbName = "quizucas";
 
     // Criando a conexão

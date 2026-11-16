@@ -12,7 +12,9 @@ async function getQuizes() {
 
     try {
         // Requisição GET para os quizes, com o parâmetro sendo o ID da categoria
-        const response = await axios.get("http://localhost/Quizucas/Backend/Queries/ListarQuizes.php", {
+
+        // Caso a porta for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/ListarQuizes.php
+        const response = await axios.get("http://localhost:8080/Quizucas/Backend/Queries/ListarQuizes.php", {
             params: {
                 ID_Categoria: idCategoria,
             }
@@ -28,22 +30,12 @@ async function getQuizes() {
             container.textContent = "Não há quizes disponíveis para essa categoria.";
 
             // Estilizando a mensagem no container
+            container.style.display = "flex";
             container.style.textAlign = "center";
             container.style.marginTop = "2.5rem";
             container.style.color = "#fff";
             container.style.fontWeight = "normal";
             container.style.fontSize = "1.5625rem";
-
-            // Criando um link para voltar para a página home
-            const link = document.createElement("a");
-
-            link.href = "http://localhost/Quizucas/Frontend/Home.html";
-            link.textContent = "Voltar para página home";
-
-            // Adicionando propriedas do CSS no link
-            link.setAttribute("style", "display: flex; justify-content: center; margin-top: 1.5rem; font-size: 1.25rem; font-weight: normal; color: #fff;");
-
-            document.body.appendChild(link);
 
             return;
         }

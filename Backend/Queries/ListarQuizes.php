@@ -1,8 +1,12 @@
 <?php
+    // Chamadas de cabeçalho para o CORS não bloquear
+    header("Access-Control-Allow-Origin: http://localhost:8080");
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type, Authorization");    
+    header("Content-Type: application/json; charset=utf-8");
+
     // Query para listar os quizes
     require_once __DIR__ . "/../Config/DatabaseConfig.php";
-
-    header("Content-Type: application/json; charset=utf-8");
 
     try {
         // Recuperando o ID da categoria enviado pela URL

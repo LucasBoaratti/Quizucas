@@ -76,7 +76,10 @@
 
 .imagemQuiz {
     width: 18.75rem;
-    border-radius: 15px;
+    height: 150px;
+    max-height: 9.375rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .descricaoQuiz {
@@ -110,4 +113,16 @@
 
 .botaoQuiz:hover::after {
     transform: scaleX(1);
+}
+
+.voltar {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25rem;
+}
+
+.linkVoltar {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 1.125rem;
 }

@@ -106,7 +106,7 @@
     justify-content: space-around;
     align-items: center;
     gap: 25rem;
-    margin-top: 1.875rem;
+    margin: 1.875rem 0;
 }
 
 .coracaoPiscante {
