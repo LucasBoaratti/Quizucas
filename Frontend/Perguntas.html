@@ -16,6 +16,7 @@
             </section>
 
             <section class="perguntas">
+                <a href="./Quiz.html" class="voltar">Voltar para os quizzes</a>
                 <p id="pergunta"></p>
                 <div class="coracoes">
                     <img src="./Assets/Elements/Coração.png" alt="Coração" class="coracao1">
@@ -23,31 +24,17 @@
                     <img src="./Assets/Elements/Coração.png" alt="Coração" class="coracao3">
                 </div>
                 <div class="alternativas">
-                    <div class="hexagono">
+                    <template id="hexagono">
                         <button type="button" class="opcao">
-                            <p id="alternativaA"></p>
+                            <p class="alternativa"></p>
                         </button>
-                    </div>
-                    <div class="hexagono">
-                        <button type="button" class="opcao">
-                            <p id="alternativaB"></p>
-                        </button>
-                    </div>
-                    <div class="hexagono">
-                        <button type="button" class="opcao">
-                            <p id="alternativaC"></p>
-                        </button>
-                    </div>
-                    <div class="hexagono">
-                        <button type="button" class="opcao">
-                            <p id="alternativaD"></p>
-                        </button>
-                    </div>
+                    </template>
                 </div>
             </section>
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.20.0/axios.min.js"></script>
             <script src="./JavaScript/Perguntas.js"></script>
+            <script src="./JavaScript/Alternativas.js"></script>
         </main>
     </body>
 </html>

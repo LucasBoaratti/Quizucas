@@ -17,9 +17,7 @@
 
         // Preparando a chamada do SQL
         $stmt = $connection->prepare($sql);
-
         $stmt->bindValue(":ID_Categoria", $idCategoria, PDO::PARAM_INT);
-
         $stmt->execute();
 
         // Recuperando os registros

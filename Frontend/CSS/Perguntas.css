@@ -49,6 +49,12 @@
     align-items: center;
 }
 
+.voltar {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 1.125rem;
+}
+
 #pergunta {
     font-size: 1.5625rem;
     color: #fff;
@@ -57,7 +63,8 @@
 
 .coracoes {
     display: flex;
-    gap: 15px; 
+    gap: 15px;
+    margin-bottom: 1.875rem;
 }
 
 .coracao1, .coracao2, .coracao3 {
@@ -74,7 +81,7 @@
     margin-bottom: 1.875rem;
 }
 
-.hexagono {
+#hexagono {
     width: min(100%, 522px);
     aspect-ratio: 522 / 141;
     clip-path: polygon(

@@ -7,6 +7,7 @@ function recuperarURL() {
 
 // Função assíncrona para carregar as perguntas e as alternativas
 async function getPerguntas() {
+    // Recuperando o ID da quiz
     const idQuiz = recuperarURL();
 
     try {
@@ -23,7 +24,23 @@ async function getPerguntas() {
         // Buscando o elemento da pergunta
         const pergunta = document.getElementById("pergunta");
 
+        // Caso o quiz não possuia nenhuma pergunta...
+        if (perguntas.length === 0) {
+            pergunta.textContent = "Nenhuma pergunta encontrada.";
+
+            pergunta.style.display = "flex";
+            pergunta.style.justifyContent = "center";
+            pergunta.style.margin = "1.875rem 0"
+            pergunta.style.color = "#fff"
+            pergunta.style.fontSize = "1.125rem";
+
+            return;
+        }
+
         pergunta.textContent = perguntas[0].Enunciado;
+
+        // Chamando a função das alternativas cada vez que surge uma nova pergunta
+        await getAlternativas(perguntas[0].ID_Pergunta);
     }
     catch (error) {
         console.log("Erro ao carregar perguntas: ", error);
