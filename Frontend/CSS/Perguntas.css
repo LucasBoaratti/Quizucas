@@ -1,0 +1,93 @@
+/* Reset de estilização */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Pixelify", sans-serif;
+}
+
+/* Fonte padrão */
+@font-face {
+    font-family: "Pixelify";
+    src: url("../Assets/Fonts/PixelifySans-Regular.ttf") format("truetype");
+}
+
+/* Estrela piscante */
+@keyframes piscar {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.estrela {
+    animation: piscar 2s ease-in-out infinite;
+}
+
+.conteudoPrincipal {
+    background-image: url("../Assets/Background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.elementosTopo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1.25rem;
+}
+
+.perguntas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pergunta {
+    font-size: 1.5625rem;
+    color: #fff;
+    margin: 1.875rem 0;
+}
+
+.coracoes {
+    display: flex;
+    gap: 15px; 
+}
+
+.coracao1, .coracao2, .coracao3 {
+    width: 4.9375rem;
+    height: 4.5625rem;
+}
+
+.alternativas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.875rem;
+}
+
+.hexagono {
+    width: min(100%, 522px);
+    aspect-ratio: 522 / 141;
+    clip-path: polygon(
+        25% 0,
+        75% 0,
+        100% 50%,
+        75% 100%,
+        25% 100%,
+        0 50%
+    );
+    background: linear-gradient(90deg, #C020FB, #5DD73E);
+}
+
+.opcao {
+    cursor: pointer;
+}

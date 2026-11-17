@@ -14,7 +14,7 @@ async function getQuizes() {
         // Requisição GET para os quizes, com o parâmetro sendo o ID da categoria
 
         // Caso a porta for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/ListarQuizes.php
-        const response = await axios.get("http://localhost/Quizucas/Backend/Queries/ListarQuizes.php", {
+        const response = await axios.get("http://localhost:8080/Quizucas/Backend/Queries/ListarQuizes.php", {
             params: {
                 ID_Categoria: idCategoria,
             }
@@ -46,6 +46,7 @@ async function getQuizes() {
             const imagem = card.querySelector(".imagemQuiz");
             const nome = card.querySelector(".nomeQuiz");
             const descricao = card.querySelector(".descricaoQuiz");
+            const botaoQuiz = card.querySelector(".botaoQuiz");
 
             // Colocando a URL da imagem no quiz
             imagem.src = "../" + quiz.Imagem;
@@ -54,6 +55,10 @@ async function getQuizes() {
             nome.textContent = quiz.Titulo;
 
             descricao.textContent = quiz.Descricao;
+
+            botaoQuiz.addEventListener("click", () => {
+                window.location.href = `./Perguntas.html?ID_Quiz=${quiz.ID_Quiz}`;
+            });
 
             container.appendChild(card);
         });

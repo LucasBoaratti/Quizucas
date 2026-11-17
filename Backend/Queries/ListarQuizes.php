@@ -5,7 +5,7 @@
     header("Access-Control-Allow-Headers: Content-Type, Authorization");    
     header("Content-Type: application/json; charset=utf-8");
 
-    // Query para listar os quizes
+    // Busca as configurações do banco de dados
     require_once __DIR__ . "/../Config/DatabaseConfig.php";
 
     try {

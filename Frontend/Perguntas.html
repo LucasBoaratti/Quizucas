@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quizucas - Perguntas</title>
+        <link rel="stylesheet" href="./CSS/Perguntas.css">
+        <link rel="shortcut icon" href="./Assets/Favicon.ico" type="image/x-icon">
+    </head>
+    <body class="conteudoPrincipal">
+        <main>
+            <section class="elementosTopo">
+                <img src="./Assets/Elements/Estrela.png" alt="Estrela" class="estrela">
+                <img src="./Assets/Logomarca.png" alt="Logomarca Quizucas">
+                <img src="./Assets/Elements/Foguete.png" alt="Foguete">
+            </section>
+
+            <section class="perguntas">
+                <p id="pergunta"></p>
+                <div class="coracoes">
+                    <img src="./Assets/Elements/Coração.png" alt="Coração" class="coracao1">
+                    <img src="./Assets/Elements/Coração.png" alt="Coração" class="coracao2">
+                    <img src="./Assets/Elements/Coração.png" alt="Coração" class="coracao3">
+                </div>
+                <div class="alternativas">
+                    <div class="hexagono">
+                        <button type="button" class="opcao">
+                            <p id="alternativaA"></p>
+                        </button>
+                    </div>
+                    <div class="hexagono">
+                        <button type="button" class="opcao">
+                            <p id="alternativaB"></p>
+                        </button>
+                    </div>
+                    <div class="hexagono">
+                        <button type="button" class="opcao">
+                            <p id="alternativaC"></p>
+                        </button>
+                    </div>
+                    <div class="hexagono">
+                        <button type="button" class="opcao">
+                            <p id="alternativaD"></p>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.20.0/axios.min.js"></script>
+            <script src="./JavaScript/Perguntas.js"></script>
+        </main>
+    </body>
+</html>

@@ -2,6 +2,8 @@ CREATE DATABASE Quizucas;
 
 USE Quizucas;
 
+-- Tabelas
+
 CREATE TABLE Categorias (
 	ID_Categoria INT AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(100) NOT NULL,
@@ -70,3 +72,16 @@ INSERT INTO Quiz (ID_Categoria, Titulo, Descricao, Imagem) VALUES
 (8, "Músicas pop", "Você conhece o gênero de música pop? Se sim, venha testar seu conhecimento de músicas do gênero!", "Frontend/Assets/ImagensQuiz/QuizMusicaPop.webp"),
 (9, "Sistema nervoso", "Venha explorar mais sobre você mesmo! Conheça sobre o sistema nervoso, um dos sistemas centrais do corpo!", "Frontend/Assets/ImagensQuiz/QuizSistemaNervoso.webp"),
 (9, "Sistema digestivo", "Explore seu corpo, fazendo o quiz do sistema digestivo, onde ocorre o tráfego das comidas e bebidas!", "Frontend/Assets/ImagensQuiz/QuizSistemaDigestivo.webp");
+
+SELECT * FROM Quiz;
+
+-- Inserindo as perguntas, referentes a cada quiz
+INSERT INTO Perguntas (ID_Quiz, Enunciado) VALUES
+-- Perguntas do quiz 1 (Minecraft)
+(1, "Pergunta 1: qual mob é conhecido por chegar silenciosamente e explodir perto do jogador?"),
+(1, "Pergunta 2: qual bloco é utilizado para construir um portal para o nether?"),
+(1, "Pergunta 3: qual é o nome do chefe encontrado na dimensão The End?"),
+(1, "Pergunta 4: qual é o tamanho da área de criação da bancada de trabalho?"),
+(1, "Pergunta 5: qual minério é necessário para criar uma mesa de encantamentos?"),
+(1, "Pergunta 6: qual item é utilizado para domesticar lobos?"),
+(1, "Pergunta 7: qual ferramenta descasca os trocos das árvores?");
