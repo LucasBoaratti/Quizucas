@@ -1,6 +1,6 @@
 // Variável global para mudar o número de vidas em outras partes do arquivo
 const quantidadeVidas = 3; // Quantidade atual
-let vidasRestantes = quantidadeVidas; // Quantiade restante (será usada na tela de resultados)
+let vidasRestantes = quantidadeVidas; // Quantidade restante (será usada na tela de resultados)
 
 // Função para abrir o modal de acerto temporariamente
 function abrirModalAcerto() {
