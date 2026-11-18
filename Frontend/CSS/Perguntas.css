@@ -105,3 +105,45 @@
     transform: scale(1.1);
     transition: transform 0.3s ease-in-out;
 }
+
+/* Estiliza apenas o modal quando ele for aberto */
+.modalAcerto[open] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalAcerto {
+    width: 25rem;
+    padding: 1.25rem;
+    margin: auto;
+    background-color: #5DD73E;
+    border-radius: 1.5625rem;
+    border: none;
+}
+
+/* Estilização da cor de fundo do modal */
+.modalAcerto::backdrop {
+    background-color: rgb(161, 161, 161, 0.3);
+}
+
+.modalErro[open] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalErro {
+    width: 25rem;
+    padding: 1.25rem;
+    margin: auto;
+    background-color: #ee4309;
+    border-radius: 1.5625rem;
+    border: none;
+}
+
+.modalErro::backdrop {
+    background-color: rgb(161, 161, 161, 0.5);
+}

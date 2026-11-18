@@ -1,3 +1,32 @@
+// Função para abrir o modal de acerto temporariamente
+function abrirModalAcerto() {
+    const modalAcerto = document.querySelector(".modalAcerto");
+
+    // Exibe o modal após acertar a pergunta
+    modalAcerto.showModal();
+    
+    // Adiciona um timer de 1 segundo por modal ficar aberto
+    setTimeout(() => {
+        if (modalAcerto.open) {
+            modalAcerto.close();
+        }
+    }, 1000);
+}
+
+// Função para abrir o modal de erro temporariamente
+function abrirModalErro() {
+    const modalErro = document.querySelector(".modalErro");
+
+    // Exibe o modal após errar a pergunta
+    modalErro.showModal();
+
+    setTimeout(() => {
+        if (modalErro.open) {
+            modalErro.close();
+        }
+    }, 1000);
+}
+
 // Buscando as alternativas
 async function getAlternativas(idPergunta) {
     try {
@@ -19,7 +48,7 @@ async function getAlternativas(idPergunta) {
         alternativas.forEach(alternativa => {
             const modeloAlternativas = modelo.content.cloneNode(true);
 
-            const opcao = modeloAlternativas.querySelector(".alternativa");
+            const opcao = modeloAlternativas.querySelector(".opcao");
 
             opcao.textContent = alternativa.Texto;
 
@@ -34,14 +63,13 @@ async function getAlternativas(idPergunta) {
 
                     const respostaAlternativas = responseAlternativas.data;
                     
-                    // Se o usuário acertou a alternativa...
+                    // Se o usuário acertou a alternativa, abre um modal dizendo que acertou
                     if (respostaAlternativas.correta) {
-                        // Console.log temporário
-                        console.log("Correto!");
+                        abrirModalAcerto();
                     }
+                    // Se ele errou, abre um modal dizendo que errou
                     else {
-                        // Console.log temporário
-                        console.log("Errado!");
+                        abrirModalErro();
                     }
                 }
                 catch (error) {
