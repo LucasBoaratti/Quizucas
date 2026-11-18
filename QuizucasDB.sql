@@ -85,3 +85,5 @@ INSERT INTO Perguntas (ID_Quiz, Enunciado) VALUES
 (1, "Pergunta 5: qual minério é necessário para criar uma mesa de encantamentos?"),
 (1, "Pergunta 6: qual item é utilizado para domesticar lobos?"),
 (1, "Pergunta 7: qual ferramenta descasca os trocos das árvores?");
+
+-- Não haverá inserções para a tabela de alternativas sendo exibidas aqui, pois senão eu estaria dando a resposta de mão beijada... Para saber quais são as respostas das questões, acesse esse link: https://dontpad.com/alternativasCertas

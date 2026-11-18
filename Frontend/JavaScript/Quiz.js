@@ -64,7 +64,7 @@ async function getQuizes() {
         });
     }
     catch (error) {
-        console.log("Erro ao carregar quizes: ", error);
+        console.error("Erro ao carregar quizes: ", error);
     }
 }
 

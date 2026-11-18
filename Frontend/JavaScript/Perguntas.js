@@ -37,13 +37,14 @@ async function getPerguntas() {
             return;
         }
 
+        // Exibe a primeira pergunta para o usuário (temporário)
         pergunta.textContent = perguntas[0].Enunciado;
 
         // Chamando a função das alternativas cada vez que surge uma nova pergunta
         await getAlternativas(perguntas[0].ID_Pergunta);
     }
     catch (error) {
-        console.log("Erro ao carregar perguntas: ", error);
+        console.error("Erro ao carregar perguntas: ", error);
     }
 }
 
