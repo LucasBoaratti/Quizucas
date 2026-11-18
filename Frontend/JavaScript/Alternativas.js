@@ -1,3 +1,7 @@
+// Variável global para mudar o número de vidas em outras partes do arquivo
+const quantidadeVidas = 3; // Quantidade atual
+let vidasRestantes = quantidadeVidas; // Quantiade restante (será usada na tela de resultados)
+
 // Função para abrir o modal de acerto temporariamente
 function abrirModalAcerto() {
     const modalAcerto = document.querySelector(".modalAcerto");
@@ -25,6 +29,34 @@ function abrirModalErro() {
             modalErro.close();
         }
     }, 1000);
+}
+
+// Função de gerar vidas para o usuário ter chances de acertar as perguntas
+function gerarVidas() {
+    const container = document.querySelector(".coracoes");
+
+    // Laço for que irá gerar a quantidade de vidas no início do quiz
+    for (let i = 0; i < quantidadeVidas; i++) {
+        const vidas = document.createElement("img");
+
+        vidas.classList.add("vidas");
+        vidas.src = "./Assets/Elements/Coração.png";
+        vidas.alt = "Vida";
+
+        container.appendChild(vidas);
+    }
+}
+
+// Função para trocar a imagem da vida, caso o usuário erre a pergunta
+function trocarVida() {
+    const vida = document.querySelectorAll(".vidas");
+
+    // Se o usuário perder uma vida, a imagem é trocada e a vida fica cinza
+    if (vidasRestantes > 0) {
+        vidasRestantes--;
+
+        vida[vidasRestantes].src = "./Assets/Elements/CoraçãoPerdido.png";
+    }
 }
 
 // Buscando as alternativas
@@ -67,9 +99,11 @@ async function getAlternativas(idPergunta) {
                     if (respostaAlternativas.correta) {
                         abrirModalAcerto();
                     }
-                    // Se ele errou, abre um modal dizendo que errou
+                    // Se ele errou a alternativa, abre um modal dizendo que errou e ele perde uma vida
                     else {
                         abrirModalErro();
+
+                        trocarVida();
                     }
                 }
                 catch (error) {
@@ -84,3 +118,5 @@ async function getAlternativas(idPergunta) {
         console.error("Erro ao carregar as alternativas: ", error);
     }
 }
+
+gerarVidas();
