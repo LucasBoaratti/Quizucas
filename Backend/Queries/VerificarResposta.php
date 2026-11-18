@@ -1,5 +1,5 @@
 <?php
-    // Defininido os cabeçalhos para permitir requisições de origem autorizada
+    // Definindo os cabeçalhos para permitir requisições de origem autorizada
     header("Access-Control-Allow-Origin: http://localhost:8080");
     header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
     header("Access-Control-Allow-Headers: Content-Type, Authorization");    
