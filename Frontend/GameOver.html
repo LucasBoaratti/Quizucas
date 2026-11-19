@@ -11,9 +11,19 @@
         <main>
             <section class="elementosTopo">
                 <img src="./Assets/Elements/Nuvens.png" alt="Nuvens">
-                <img src="./Assets/GameOver.png" alt="GameOver">
                 <img src="./Assets/Elements/Nuvens.png" alt="Nuvens">
             </section>
+            <div class="informacoesGameOver">
+                <img src="./Assets/Elements/GameOver.png" alt="GameOver">
+                <h1 class="textoPerdeu">Você perdeu.</h1>
+                <p class="textoTenteNovamente">Mas não se preocupe, é só tentar novamente!</p>
+            </div>
+            <div class="botoes">
+                <button type="button" id="botaoJogarNovamente">Tente novamente</button>
+                <button type="button" class="botao" onclick="window.location.href = './Home.html'">Voltar para o início</button>
+            </div>
+
+            <script src="./JavaScript/GameOver.js"></script>
         </main>
     </body>
 </html>

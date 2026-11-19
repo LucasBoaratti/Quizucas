@@ -1,5 +1,5 @@
 // Função para recuperar o parâmetro enviado pela página home
-function recuperarURL() {
+function recuperarIDCategoria() {
     const parametros = new URLSearchParams(window.location.search);
 
     return parametros.get("ID_Categoria");
@@ -8,7 +8,7 @@ function recuperarURL() {
 // Buscando os quizes cadastrados no banco de dados
 async function getQuizes() {
     // Recuperando o ID da categoria
-    const idCategoria = recuperarURL();
+    const idCategoria = recuperarIDCategoria();
 
     try {
         // Requisição GET para os quizes, com o parâmetro sendo o ID da categoria

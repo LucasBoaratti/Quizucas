@@ -1,5 +1,5 @@
 // Recuperando o ID do quiz na URL
-function recuperarURL() {
+function recuperarIDQuiz() {
     const parametros = new URLSearchParams(window.location.search);
 
     return parametros.get("ID_Quiz");
@@ -7,8 +7,8 @@ function recuperarURL() {
 
 // Função assíncrona para carregar as perguntas e as alternativas
 async function getPerguntas() {
-    // Recuperando o ID da quiz
-    const idQuiz = recuperarURL();
+    // Recuperando o ID do quiz
+    const idQuiz = recuperarIDQuiz();
 
     try {
         // Caso a porta for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/ListarPerguntas.php

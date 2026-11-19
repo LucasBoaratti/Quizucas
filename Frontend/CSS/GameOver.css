@@ -1,0 +1,71 @@
+/* Reset de estilização */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Pixelify", sans-serif;
+}
+
+/* Fonte padrão */
+@font-face {
+    font-family: "Pixelify";
+    src: url("../Assets/Fonts/PixelifySans-Regular.ttf") format("truetype");
+}
+
+.conteudoPrincipal {
+    background-image: url("../Assets/Background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.elementosTopo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1.25rem;
+    gap: 5rem;
+}
+
+.informacoesGameOver {
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.textoPerdeu {
+    font-size: 3.75rem;
+    margin-top: 1.25rem;
+}
+
+.textoTenteNovamente {
+    font-size: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.875rem;
+    gap: 2.5rem;
+}
+
+#botaoJogarNovamente, .botao {
+    width: 43.125rem;
+    height: 6.25rem;
+    font-size: 2.5rem;
+    border: none;
+    box-shadow: 20px 20px 20px 0 rgb(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#botaoJogarNovamente:active, .botao:active {
+    transform: scale(0.98);
+}

@@ -57,6 +57,17 @@ function trocarVida() {
 
         vida[vidasRestantes].src = "./Assets/Elements/CoraçãoPerdido.png";
     }
+    
+    // Caso todas as vidas acabem, o usuário vai para a tela de game over
+    if (vidasRestantes === 0) {
+        // Recuperando a URL para adicionar o ID do quiz no parâmetro da tela de gameover, para voltar ao início do quiz, posteriormente
+        const idQuiz = recuperarIDQuiz();
+
+        // Exibe o modal de erro e depois vai para a tela de game over
+        setTimeout(() => {
+            window.location.href = `./GameOver.html?ID_Quiz=${idQuiz}`;
+        }, 1000);
+    }
 }
 
 // Buscando as alternativas
