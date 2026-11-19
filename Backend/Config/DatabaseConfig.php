@@ -5,8 +5,8 @@
     $senha = ""; // OBS: colocar senha, se for usar o MySQL (caso tenha configurado uma)
     $dbName = "quizucas";
 
-    // Criando a conexão
     try {
+        // Estabelecendo a conexão com o banco de dados
         $connection = new PDO(
             "mysql:host=$hostname;dbname=$dbName;charset=utf8mb4",
             $username,
@@ -19,13 +19,13 @@
             PDO::ERRMODE_EXCEPTION,
         );
 
-        // Definindo o formato padrão dos dados
+        // Definindo o modo padrão de recuperação dos dados
         $connection->setAttribute(
             PDO::ATTR_DEFAULT_FETCH_MODE,
             PDO::FETCH_ASSOC,
         );
 
-        // Utilizando prepared statements nativos
+        // Desabilitando a emulação de prepared statements
         $connection->setAttribute(
             PDO::ATTR_EMULATE_PREPARES,
             false,
@@ -34,6 +34,8 @@
     catch (PDOException $erro) {
         error_log($erro->getMessage());
 
-        die("Erro ao conectar no banco de dados.");
+        die(json_encode([
+            "erro" => "Erro ao conectar no banco de dados.",
+        ]));
     }
 ?>
