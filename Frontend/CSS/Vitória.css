@@ -1,0 +1,51 @@
+/* Reset de estilização */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Pixelify", sans-serif;
+}
+
+/* Fonte padrão */
+@font-face {
+    font-family: "Pixelify";
+    src: url("../Assets/Fonts/PixelifySans-Regular.ttf") format("truetype");
+}
+
+/* Estrela pulsante */
+@keyframes piscar {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Gato invertido */
+@keyframes inverter {
+    0%, 100% {
+        transform: scaleX(1);
+    }
+    
+    50% {
+        transform: scaleX(-1);
+    }
+}
+
+.estrela {
+    animation: piscar 2s ease-in-out infinite;
+}
+
+.gato {
+    animation: inverter 2s ease-in-out infinite;
+}
+
+.conteudoPrincipal {
+    background-image: url("../Assets/Background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}

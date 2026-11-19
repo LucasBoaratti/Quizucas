@@ -36,8 +36,7 @@ async function avancarPergunta() {
     }
     // Se não existir mais perguntas, o quiz acaba e avança para a tela de vitória
     else {
-        // Console.log temporário
-        console.log("Você venceu!");
+        window.location.href = "./Vitoria.html";
     }
 }
 
