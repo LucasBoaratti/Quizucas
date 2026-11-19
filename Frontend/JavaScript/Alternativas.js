@@ -87,6 +87,11 @@ async function getAlternativas(idPergunta) {
         const modelo = document.getElementById("hexagono");
         const container = document.querySelector(".alternativas");
 
+        // Removendo as alternativas anteriores
+        container.querySelectorAll(".opcao").forEach(opcao => {
+            opcao.remove();
+        });
+
         // Carregando as alternativas para serem exibidas na tela
         alternativas.forEach(alternativa => {
             const modeloAlternativas = modelo.content.cloneNode(true);
@@ -109,6 +114,11 @@ async function getAlternativas(idPergunta) {
                     // Se o usuário acertou a alternativa, abre um modal dizendo que acertou
                     if (respostaAlternativas.correta) {
                         abrirModalAcerto();
+
+                        // Exibindo a pergunta após um segundo
+                        setTimeout(() => {
+                            avancarPergunta();
+                        }, 1000);
                     }
                     // Se ele errou a alternativa, abre um modal dizendo que errou e ele perde uma vida
                     else {
@@ -130,4 +140,5 @@ async function getAlternativas(idPergunta) {
     }
 }
 
+// Chamando a função de gerar vidas
 gerarVidas();
