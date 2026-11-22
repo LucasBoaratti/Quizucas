@@ -36,7 +36,10 @@ async function avancarPergunta() {
     }
     // Se não existir mais perguntas, o quiz acaba e avança para a tela de vitória
     else {
-        window.location.href = "./Vitoria.html";
+        // Recuperando o ID do quiz
+        const idQuiz = recuperarIDQuiz();
+
+        window.location.href = `./Vitoria.html?ID_Quiz=${idQuiz}`;
     }
 }
 
@@ -47,7 +50,7 @@ async function getPerguntas() {
 
     try {
         // Caso a porta for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/ListarPerguntas.php
-        const response = await axios.get("http://localhost:8080/Quizucas/Backend/Queries/ListarPerguntas.php", {
+        const response = await axios.get("http://localhost/Quizucas/Backend/Queries/ListarPerguntas.php", {
             params: {
                 ID_Quiz: idQuiz,
             }
@@ -76,6 +79,10 @@ async function getPerguntas() {
 
         // Exibindo a primeira pergunta
         await exibirPergunta();
+
+        console.log("ID do quiz recebido:", idQuiz);
+        console.log("Resposta do PHP:", response.data);
+        console.log("Quantidade de perguntas:", response.data.length);
     }
     catch (error) {
         console.error("Erro ao carregar perguntas: ", error);

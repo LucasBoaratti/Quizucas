@@ -74,7 +74,7 @@ function trocarVida() {
 async function getAlternativas(idPergunta) {
     try {
         // Caso a porta for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/ListarAlternativas.php
-        const response = await axios.get("http://localhost:8080/Quizucas/Backend/Queries/ListarAlternativas.php", {
+        const response = await axios.get("http://localhost/Quizucas/Backend/Queries/ListarAlternativas.php", {
             params: {
                 ID_Pergunta: idPergunta,
             }
@@ -104,7 +104,7 @@ async function getAlternativas(idPergunta) {
             opcao.addEventListener("click", async () => {
                 try {
                     // Caso a porta for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/ListarAlternativas.php
-                    const responseAlternativas = await axios.post("http://localhost:8080/Quizucas/Backend/Queries/VerificarResposta.php", {
+                    const responseAlternativas = await axios.post("http://localhost/Quizucas/Backend/Queries/VerificarResposta.php", {
                         ID_Alternativa: alternativa.ID_Alternativa,
                         ID_Pergunta: idPergunta,
                     });

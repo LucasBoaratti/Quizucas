@@ -9,12 +9,20 @@
     </head>
     <body class="conteudoPrincipal">
         <main>
-            <img src="./Assets/Elements/Vitória.png" alt="Você venceu!">
-            <div>
+            <div class="venceu">
+                <img src="./Assets/Elements/Vitória.png" alt="Você venceu!">
+            </div>
+            <div class="quizCompletado">
                 <img src="./Assets/Elements/Estrela.png" alt="Estrela" class="estrela">
-                <p>Meus parabéns, meu(inha) jogador(a) você completou o quiz com sucesso!!!</p>
+                <p class="textoCompletado">Meus parabéns, meu(inha) jogador(a) você completou o quiz com sucesso!!!</p>
                 <img src="./Assets/Elements/Gato.png" alt="gato" class="gato">
             </div>
+            <div class="botoes">
+                <button type="button" id="botaoJogarNovamente">Jogar novamente</button>
+                <button type="button" class="botao" onclick="window.location.href = './Home.html'">Voltar para o início</button>
+            </div>
+
+            <script src="./JavaScript/Vitória.js"></script>
         </main>
     </body>
 </html>

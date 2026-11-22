@@ -14,7 +14,7 @@ async function getQuizes() {
         // Requisição GET para os quizes, com o parâmetro sendo o ID da categoria
 
         // Caso a porta for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/ListarQuizes.php
-        const response = await axios.get("http://localhost:8080/Quizucas/Backend/Queries/ListarQuizes.php", {
+        const response = await axios.get("http://localhost/Quizucas/Backend/Queries/ListarQuizes.php", {
             params: {
                 ID_Categoria: idCategoria,
             }

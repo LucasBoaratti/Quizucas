@@ -49,3 +49,47 @@
     background-size: cover;
     background-attachment: fixed;
 }
+
+.venceu {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.875rem;
+}
+
+.quizCompletado {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1.875rem;
+    gap: 15px;
+}
+
+.textoCompletado {
+    color: #fff;
+    font-size: 1.875rem;
+    width: 56.25rem;
+    text-align: center;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3.125rem;
+    gap: 2.5rem;
+}
+
+#botaoJogarNovamente, .botao {
+    width: 43.125rem;
+    height: 6.25rem;
+    font-size: 2.5rem;
+    border: none;
+    box-shadow: 20px 20px 20px 0 rgb(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#botaoJogarNovamente:active, .botao:active {
+    transform: scale(0.98);
+}

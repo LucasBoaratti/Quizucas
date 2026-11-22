@@ -1,8 +1,8 @@
-function jogarNovamente() {
+function jogarNovamenteDerrota() {
     // Recupera o botão pela classe do HTML
-    const jogarNovamente = document.querySelector("#botaoJogarNovamente");
+    const jogarNovamenteDerrota = document.querySelector("#botaoJogarNovamente");
 
-    jogarNovamente.addEventListener("click", function() {
+    jogarNovamenteDerrota.addEventListener("click", function() {
         // Recupera o ID do quiz pelo parâmetro
         const idQuiz = new URLSearchParams(window.location.search).get("ID_Quiz");
 
@@ -11,4 +11,4 @@ function jogarNovamente() {
     });
 }
 
-jogarNovamente();
+jogarNovamenteDerrota();
