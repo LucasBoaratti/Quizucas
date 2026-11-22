@@ -14,7 +14,7 @@ CREATE TABLE Quiz (
 	ID_Quiz INT AUTO_INCREMENT PRIMARY KEY,
     ID_Categoria INT NOT NULL,
     Titulo VARCHAR(100) NOT NULL,
-    Descricao VARCHAR(100),
+    Descricao VARCHAR(150),
     Imagem VARCHAR(255),
     
     FOREIGN KEY (ID_Categoria) REFERENCES Categorias(ID_Categoria)
@@ -85,5 +85,7 @@ INSERT INTO Perguntas (ID_Quiz, Enunciado) VALUES
 (1, "Pergunta 5: qual minério é necessário para criar uma mesa de encantamentos?"),
 (1, "Pergunta 6: qual item é utilizado para domesticar lobos?"),
 (1, "Pergunta 7: qual ferramenta descasca os trocos das árvores?");
+
+SELECT * FROM Perguntas;
 
 -- Não haverá inserções para a tabela de alternativas sendo exibidas aqui, pois senão eu estaria dando a resposta de mão beijada... Para saber quais são as respostas das perguntas, acesse esse link: https://dontpad.com/alternativasCertas
