@@ -1,5 +1,5 @@
-// Variável global para mudar o número de vidas em outras partes do arquivo
-const quantidadeVidas = 3; // Quantidade atual
+// Variável global que define a quantidade total de vidas
+const quantidadeVidas = 3; // Quantidade inicial de vidas
 let vidasRestantes = quantidadeVidas; // Quantidade restante (será usada na tela de resultados)
 
 // Função para abrir o modal de acerto temporariamente
@@ -9,7 +9,7 @@ function abrirModalAcerto() {
     // Exibe o modal após acertar a pergunta
     modalAcerto.showModal();
     
-    // Adiciona um timer de 1 segundo por modal ficar aberto
+    // Agendando o fechamento de 1 segundo pro modal ficar aberto
     setTimeout(() => {
         if (modalAcerto.open) {
             modalAcerto.close();
@@ -63,14 +63,14 @@ function trocarVida() {
         // Recuperando a URL para adicionar o ID do quiz no parâmetro da tela de gameover, para voltar ao início do quiz, posteriormente
         const idQuiz = recuperarIDQuiz();
 
-        // Exibe o modal de erro e depois vai para a tela de game over
+        // Aguardando 1 segundo antes de ir para a tela de game over
         setTimeout(() => {
             window.location.href = `./GameOver.html?ID_Quiz=${idQuiz}`;
         }, 1000);
     }
 }
 
-// Buscando as alternativas
+// Função assíncrona responsável por buscar e exibir as alternativas da pergunta.
 async function getAlternativas(idPergunta) {
     try {
         // Caso a porta for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/ListarAlternativas.php
@@ -103,7 +103,7 @@ async function getAlternativas(idPergunta) {
             // Evento do botão que verifica se o usuário acertou a resposta
             opcao.addEventListener("click", async () => {
                 try {
-                    // Caso a porta for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/ListarAlternativas.php
+                    // CCaso a porta utlizada pelo APACHE for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/VerificaRespostas.php
                     const responseAlternativas = await axios.post("http://localhost/Quizucas/Backend/Queries/VerificarResposta.php", {
                         ID_Alternativa: alternativa.ID_Alternativa,
                         ID_Pergunta: idPergunta,

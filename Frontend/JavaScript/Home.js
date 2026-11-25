@@ -1,9 +1,9 @@
 // Carregando as categorias para serem exibidas na página home
 async function getCategorias() {
     try {
-        // Chama a URL/caminho da lista de categorias
+        // Realizando uma requisição HTTP GET para recuperar as categorias cadastradas no banco de dados
 
-        // Caso a porta for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/ListarCategorias.php
+        // Caso a porta utilizada pelo APACHE for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/ListarCategorias.php
         const response = await axios.get("http://localhost/Quizucas/Backend/Queries/ListarCategorias.php");
         const categorias = response.data;
 
@@ -23,7 +23,7 @@ async function getCategorias() {
 
             nome.textContent = categoria.Nome;
 
-            // Ao clicar no botão, leva para os quizes da categoria escolhida
+            // Adicionando um evento de clique para redirecionar o usuário para a página de quizzes
             botaoQuiz.addEventListener("click", () => {
                 window.location.href = `./Quiz.html?ID_Categoria=${categoria.ID_Categoria}`;
             });

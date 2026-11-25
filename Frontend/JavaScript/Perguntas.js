@@ -1,7 +1,7 @@
-// Armazenando todas as perguntas recuperadas no banco de dados
+// Armazenando todas as perguntas retornadas pelo PHP
 let perguntas = [];
 
-// Índice que indica qual pergunta está sendo exibida
+// Índice que indica qual pergunta está sendo exibida atualmente no array
 let indicePergunta = 0;
 
 // Recuperando o ID do quiz na URL
@@ -13,7 +13,7 @@ function recuperarIDQuiz() {
 
 // Função para exibir as perguntas e suas alternativas
 async function exibirPergunta() {
-    // Recuperando a pergunta de acordo com o índice atual e pega o ID da pergunta no HTML
+    // Recuperando a pergunta atual e o elemento HTML onde seu enunciado será exibido
     const perguntaAtual = perguntas[indicePergunta];
     const pergunta = document.getElementById("pergunta");
 
@@ -26,7 +26,7 @@ async function exibirPergunta() {
 
 // Função que avança para a próxima pergunta
 async function avancarPergunta() {
-    // Aumentando o índice da pergunta atual
+    // Incrementando o índice da pergunta atual, para avançar para a próxima posição do array de perguntas
     indicePergunta++;
 
     // Verificando se ainda existem perguntas
@@ -43,25 +43,25 @@ async function avancarPergunta() {
     }
 }
 
-// Função assíncrona para carregar as perguntas e as alternativas
+// Função assíncrona responsável por buscar as perguntas
 async function getPerguntas() {
     // Recuperando o ID do quiz
     const idQuiz = recuperarIDQuiz();
 
     try {
-        // Caso a porta for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/ListarPerguntas.php
+        // Caso a porta utlizada pelo APACHE for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/ListarPerguntas.php
         const response = await axios.get("http://localhost/Quizucas/Backend/Queries/ListarPerguntas.php", {
             params: {
                 ID_Quiz: idQuiz,
             }
         });
 
-        // Armazenando os dados das perguntas
+        // Armazenando os dados das perguntas no array de perguntas
         perguntas = response.data;
 
         const pergunta = document.getElementById("pergunta");
 
-        // Caso o quiz não possuia nenhuma pergunta...
+        // Verificando se o quiz possui as perguntas cadastradas
         if (perguntas.length === 0) {
             pergunta.textContent = "Nenhuma pergunta encontrada.";
 
@@ -79,10 +79,6 @@ async function getPerguntas() {
 
         // Exibindo a primeira pergunta
         await exibirPergunta();
-
-        console.log("ID do quiz recebido:", idQuiz);
-        console.log("Resposta do PHP:", response.data);
-        console.log("Quantidade de perguntas:", response.data.length);
     }
     catch (error) {
         console.error("Erro ao carregar perguntas: ", error);

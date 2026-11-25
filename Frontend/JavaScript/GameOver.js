@@ -1,5 +1,5 @@
 function jogarNovamenteDerrota() {
-    // Recupera o botão pela classe do HTML
+    // Recupera o botão pelo ID do HTML
     const jogarNovamenteDerrota = document.querySelector("#botaoJogarNovamente");
 
     jogarNovamenteDerrota.addEventListener("click", function() {

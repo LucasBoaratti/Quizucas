@@ -1,4 +1,4 @@
-// Função para recuperar o parâmetro enviado pela página home
+// Função para recuperar o parâmetro ID_Categoria no parâmetro da URL
 function recuperarIDCategoria() {
     const parametros = new URLSearchParams(window.location.search);
 
@@ -11,9 +11,9 @@ async function getQuizes() {
     const idCategoria = recuperarIDCategoria();
 
     try {
-        // Requisição GET para os quizes, com o parâmetro sendo o ID da categoria
+        // Realizando uma requisição HTTP GET para recuperar os quizzes da categoria, utilizando seu ID como parâmetro
 
-        // Caso a porta for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/ListarQuizes.php
+        // Caso a porta utlizada pelo APACHE for 8080 ao invés de 80, use essa URL: http://localhost:8080/Quizucas/Backend/Queries/ListarQuizes.php
         const response = await axios.get("http://localhost/Quizucas/Backend/Queries/ListarQuizes.php", {
             params: {
                 ID_Categoria: idCategoria,
@@ -41,6 +41,7 @@ async function getQuizes() {
         }
 
         quizes.forEach(quiz => {
+            // Criando uma cópia do modelo para cada quiz
             const card = modelo.content.cloneNode(true);
 
             const imagem = card.querySelector(".imagemQuiz");
@@ -48,7 +49,7 @@ async function getQuizes() {
             const descricao = card.querySelector(".descricaoQuiz");
             const botaoQuiz = card.querySelector(".botaoQuiz");
 
-            // Colocando a URL da imagem no quiz
+            // Definindo o caminho da imagem e seu texto alternativo
             imagem.src = "../" + quiz.Imagem;
             imagem.alt = quiz.Titulo;
 
@@ -56,6 +57,7 @@ async function getQuizes() {
 
             descricao.textContent = quiz.Descricao;
 
+            // Adicionando um evento de clique para redirecionar o usuário à página de perguntas do quiz selecionado
             botaoQuiz.addEventListener("click", () => {
                 window.location.href = `./Perguntas.html?ID_Quiz=${quiz.ID_Quiz}`;
             });
