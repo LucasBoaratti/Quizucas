@@ -30,12 +30,15 @@ Quizucas/
 │   ├── Config/ # Configurações do banco de dados
 |   |   └── DatabaseConfig.php
 │   └── Queries/ # Queries/scripts sql de cada tabela
+|       ├── ListarAlternativas.php
 |       ├── ListarCategorias.php
-|       └── ListarQuizes.php
+|       ├── ListarPerguntas.php
+|       ├── ListarQuizes.php
+|       └── VerificarResposta.php
 ├── Frontend/
 |   ├── Assets/
 |   |   ├── Elements/
-|   |   |   └── # Elementos decorativos (e alguns com efeitos)
+|   |   |   └── # Elementos decorativos
 |   |   ├── Fonts/
 |   |   |   └── # Fonte personalizada padrão do projeto   
 |   |   ├── ImagensCategorias/
@@ -46,17 +49,27 @@ Quizucas/
 |   |   ├── Favicon.ico
 |   |   └── Logomarca.png
 |   ├── CSS/ # Arquivos de estilização
+|   |   ├── GameOver.css
 |   |   ├── Home.css
 |   |   ├── Index.css
-|   |   └── Quiz.css
+|   |   ├── Perguntas.css
+|   |   ├── Quiz.css
+|   |   └── Vitória.css
 |   ├── JavaScript/ # Arquivos de script
+|   |   ├── Alternativas.js
+|   |   ├── GameOver.js
 |   |   ├── Home.js
-|   |   └── Quiz.js
+|   |   ├── Perguntas.js
+|   |   ├── Quiz.js
+|   |   └── Vitória.js
+|   ├── GameOver.html
 |   ├── Home.html
 |   ├── Index.html
-|   └── Quiz.html
-├── QuizucasDB.sql
-└── README.md
+|   ├── Perguntas.html
+|   ├── Quiz.html
+|   └── Vitória.html
+├── QuizucasDB.sql # Script SQL para criar o banco de dados e as tabelas do projeto
+└── README.md # Arquivo de documentação do projeto
 ```
 
 # Como rodar o projeto
