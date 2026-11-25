@@ -1,0 +1,9 @@
+# Arquivos com informações sensíveis
+.env
+.env.*
+
+# Permite que o arquivo de exemplo seja enviado ao GitHub
+!.env.example
+
+# Dependências instaladas pelo Composer
+/vendor/

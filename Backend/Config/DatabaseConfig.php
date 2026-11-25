@@ -1,14 +1,26 @@
 <?php
+    require_once dirname(__DIR__, 2) . "/vendor/autoload.php";
+
+    use Dotenv\Dotenv;
+
+    // Recuperando o caminho da raíz do projeto
+    $caminhoProjeto = dirname(__DIR__, 2);
+
+    // Carreganho as variáveis do arquivo .env
+    $dotenv = Dotenv::createImmutable($caminhoProjeto);
+    $dotenv->safeLoad();
+
     // Informações do banco de dados
-    $hostname = "localhost";
-    $username = "root";
-    $senha = ""; // OBS: colocar senha, se for usar o MySQL (caso tenha configurado uma)
-    $dbName = "quizucas";
+    $host = $_ENV['DB_HOST'] ?? "localhost";
+    $porta = $_ENV['DB_PORT'] ?? "3306";
+    $dbName = $_ENV['DB_NAME'] ?? "quizucas";
+    $username = $_ENV['DB_USER'] ?? "root";
+    $senha = $_ENV['DB_PASSWORD'] ?? "";
 
     try {
         // Estabelecendo a conexão com o banco de dados
         $connection = new PDO(
-            "mysql:host=$hostname;dbname=$dbName;charset=utf8mb4",
+            "mysql:host=$host;port=$porta;dbname=$dbName;charset=utf8mb4",
             $username,
             $senha,
         );
